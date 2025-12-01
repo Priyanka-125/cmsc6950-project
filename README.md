@@ -81,7 +81,7 @@ Negative temperatures
 Performance
 
 Mixed data types
-
+---
 ## 5. Reproducible Figures (Script-Generated)
 
 make_figures.py produces all figures required in the report:
@@ -103,7 +103,7 @@ Monthly Variability of TMAX
 Decadal Variability of TMAX
 
 All figures are saved reproducibly without using Jupyter Notebook.
-
+---
 ## 6. File Structure
 project/
 │
