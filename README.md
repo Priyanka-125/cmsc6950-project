@@ -52,64 +52,80 @@ This function is used in all extreme-event analyses.
 ## 4. Running the Project
 
 ### Install required packages:
+Run:
+
 ```bash
 pip install pandas matplotlib seaborn scipy pytest
-
-Generate all figures used in the report:
+```
+### **1. Generate All Figures**
+```bash
 python make_figures.py
+```
+This script will:
 
+-Download NOAA climate data
 
-This creates a folder:
+-Clean and interpolate gaps
 
-figures/
+-Calculate yearly/decadal metrics
 
+-Identify extreme heat events under multiple thresholds
 
-containing all final images.
+-Save all 8 reproducible figures into the /figures folder
+### **2. Run Unit Tests**
 
-Run unit tests:
-pytest
+Tests ensure the core function behaves correctly under many scenarios:
 
+```bash
+pytest -v
+python -m pytest -q                                             
+```
 
-Tests verify correctness across:
-
-Normal cases
-
-Edge cases (duplicates, leap years, unsorted index)
-
-Negative temperatures
-
-Performance
-
-Mixed data types
 ---
-## 5. Reproducible Figures (Script-Generated)
+## 📊 Figures Produced
 
-make_figures.py produces all figures required in the report:
+1. **Daily Average Temperature Time Series**  
+2. **Annual Mean Temperature Trend + Regression Line**  
+3. **Extreme Hot Days Per Year (Mean + 2σ)**  
+4. **Sensitivity Analysis (2σ, 2.5σ, 3σ)**  
+5. **Trend in Extreme Days**  
+6. **Rolling 365-Day Variability (TMAX)**  
+7. **Monthly Variability (Std Dev by Month)**  
+8. **Decadal Variability (Std Dev by Decade)**  
 
-Daily Average Temperature Time Series
+All figures are reproducible by running the standalone script.
 
-Annual Mean Temperature Trend + Regression Line
-
-Extreme Hot Days Per Year (threshold = mean + 2σ)
-
-Sensitivity Analysis (2σ, 2.5σ, 3σ thresholds)
-
-Trend in Extreme Heat Events
-
-Rolling 365-Day Temperature Variability
-
-Monthly Variability of TMAX
-
-Decadal Variability of TMAX
-
-All figures are saved reproducibly without using Jupyter Notebook.
 ---
-## 6. File Structure
+
+## 📂 Repository Structure
+```
 project/
 │
-├── analysis.py                 # extreme_days() implementation
-├── test_analysis.py            # full unit test suite
-├── make_figures.py             # generates all figures for the report
-├── temperature_variability_analysis.ipynb   # development notebook (not graded)
-├── figures/                    # auto-generated figures
-└── README.md                   # project documentation
+├── analysis.py                     # Contains extreme_days() logic
+├── make_figures.py                 # Main script that regenerates all figures
+├── fig.py                          # Alternate plotting script (daily TAVG + 30d mean)
+├── test_analysis.py                # Full unit tests for extreme_days()
+├── temperature_variability_analysis.ipynb   # Notebook used during development
+│
+└── figures/                        # Output images (generated automatically)
+```
+
+---
+
+
+## 📚 Citation
+
+NOAA National Centers for Environmental Information (NCEI),  
+Daily Global Historical Climatology Network (GHCN).
+
+---
+
+## ✅ Final Deliverables
+
+- `make_figures.py` (complete reproducible pipeline)  
+- All figures inside `/figures/`  
+- `analysis.py` + `test_analysis.py` (full tested logic)  
+- README.md (this file)
+
+---
+
