@@ -103,7 +103,6 @@ project/
 │
 ├── analysis.py                     # Contains extreme_days() logic
 ├── make_figures.py                 # Main script that regenerates all figures
-├── fig.py                          # Alternate plotting script (daily TAVG + 30d mean)
 ├── test_analysis.py                # Full unit tests for extreme_days()
 ├── temperature_variability_analysis.ipynb   # Notebook used during development
 │
