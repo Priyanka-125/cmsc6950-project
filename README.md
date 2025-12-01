@@ -82,7 +82,7 @@ Performance
 
 Mixed data types
 
-5. Reproducible Figures (Script-Generated)
+## 5. Reproducible Figures (Script-Generated)
 
 make_figures.py produces all figures required in the report:
 
@@ -104,7 +104,7 @@ Decadal Variability of TMAX
 
 All figures are saved reproducibly without using Jupyter Notebook.
 
-6. File Structure
+## 6. File Structure
 project/
 │
 ├── analysis.py                 # extreme_days() implementation
